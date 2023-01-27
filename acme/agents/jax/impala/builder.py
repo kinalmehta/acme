@@ -183,7 +183,7 @@ class IMPALABuilder(Generic[actor_core_lib.RecurrentState],
         client=variable_source,
         key='network',
         update_period=self._config.variable_update_period)
-    return actors_lib.GenericActor(policy, random_key, variable_client, adder)
+    return actors_lib.GenericActor(policy, random_key, variable_client, adder, jit=False)
 
   def make_policy(self,
                   networks: impala_networks.IMPALANetworks,
